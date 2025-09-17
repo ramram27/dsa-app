@@ -13,7 +13,7 @@ const ProgressReport = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                {/* Easy Progress */}
+
                 <div className="bg-green-50 p-4 rounded-lg">
                     <h4 className="font-semibold text-green-800 mb-2">Easy Topics</h4>
                     <div className="text-2xl font-bold text-green-600 mb-2">
@@ -21,7 +21,7 @@ const ProgressReport = () => {
                     </div>
                 </div>
 
-                {/* Medium Progress */}
+
                 <div className="bg-yellow-50 p-4 rounded-lg">
                     <h4 className="font-semibold text-yellow-800 mb-2">Medium Topics</h4>
                     <div className="text-2xl font-bold text-yellow-600 mb-2">
@@ -30,7 +30,7 @@ const ProgressReport = () => {
 
                 </div>
 
-                {/* Hard Progress */}
+
                 <div className="bg-red-50 p-4 rounded-lg">
                     <h4 className="font-semibold text-red-800 mb-2">Hard Topics</h4>
                     <div className="text-2xl font-bold text-red-600 mb-2">
