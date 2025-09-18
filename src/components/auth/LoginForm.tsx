@@ -4,7 +4,7 @@ import { useState } from "react"
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-const url = process.env.API_URL || 'http://localhost:4000/api';
+const url = process.env.API_URL || 'https://dsa-app-backend.onrender.com';
 export default function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
