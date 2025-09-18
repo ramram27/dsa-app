@@ -4,7 +4,7 @@ import { useState } from "react"
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-const url = process.env.API_URL || 'https://dsa-app-backend.onrender.com';
+const url = process.env.API_URL || 'https://dsa-app-backend.onrender.com/api';
 export default function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,14 +17,24 @@ export default function LoginForm() {
         setError(null);
         setLoading(false)
         try {
-            const res = await axios.post(`${url}/login`, { email, password });
-            console.log("hello", res)
-            if (typeof window !== "undefined") {
-                localStorage.setItem('userEmail', email);
+            // const res = await axios.post(`${url}/login`, { email, password });
+            // console.log("hello", res)
+            // if (typeof window !== "undefined") {
+            //     localStorage.setItem('userEmail', email);
+            // }
+            // router.push("/dashboard")
+            const staticEmail = "rohit45@gmail.com";
+            const staticPassword = "12345";
+
+            if (email === staticEmail && password === staticPassword) {
+                if (typeof window !== "undefined") {
+                    localStorage.setItem("userEmail", email);
+                }
+                router.push("/dashboard");
+            } else {
+                throw new Error("Invalid email or password");
             }
-            router.push("/dashboard")
         } catch (err: any) {
-            console.log("hello", err)
             setError(err?.responce?.data?.message ?? 'login failed')
         } finally {
             setLoading(false)

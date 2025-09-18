@@ -8,7 +8,7 @@ const ProgressReport = () => {
 
     useEffect(() => {
         const storedEssay = localStorage.getItem("essay");
-        const storedMedium = localStorage.getItem("Meduim"); // typo? (Medium?)
+        const storedMedium = localStorage.getItem("Meduim");
         const storedHard = localStorage.getItem("hard");
 
         setEssay(storedEssay);
