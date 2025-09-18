@@ -19,7 +19,9 @@ export default function LoginForm() {
         try {
             const res = await axios.post(`${url}/login`, { email, password });
             console.log("hello", res)
-            localStorage.setItem('userEmail', email);
+            if (typeof window !== "undefined") {
+                localStorage.setItem('userEmail', email);
+            }
             router.push("/dashboard")
         } catch (err: any) {
             console.log("hello", err)

@@ -5,9 +5,11 @@ import { useRouter } from "next/navigation";
 export default function DashboardPage() {
     const router = useRouter();
     const handleLogout = (): void => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('userEmail');
-        localStorage.removeItem('userData');
+        if (typeof window !== "undefined") {
+            localStorage.removeItem('token');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userData');
+        }
         router.push('/');
     };
     return (

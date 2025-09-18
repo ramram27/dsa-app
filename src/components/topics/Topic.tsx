@@ -257,9 +257,11 @@ export default function TopicsPage() {
     }, [topicsData]);
 
     useEffect(() => {
-        localStorage.setItem('essay', JSON.stringify(progress.easy.percentage))
-        localStorage.setItem('Meduim', JSON.stringify(progress.easy.percentage))
-        localStorage.setItem('hard', JSON.stringify(progress.easy.percentage))
+        if (typeof window !== "undefined") {
+            localStorage.setItem('essay', JSON.stringify(progress.easy.percentage))
+            localStorage.setItem('Meduim', JSON.stringify(progress.easy.percentage))
+            localStorage.setItem('hard', JSON.stringify(progress.easy.percentage))
+        }
 
     })
 

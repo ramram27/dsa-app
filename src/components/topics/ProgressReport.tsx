@@ -1,9 +1,20 @@
 'use client'
+import { useState, useEffect } from "react";
 
 const ProgressReport = () => {
-    const essay = localStorage.getItem('essay')
-    const meduim = localStorage.getItem('Meduim')
-    const hard = localStorage.getItem('hard')
+    const [essay, setEssay] = useState<string | null>(null);
+    const [medium, setMedium] = useState<string | null>(null);
+    const [hard, setHard] = useState<string | null>(null);
+
+    useEffect(() => {
+        const storedEssay = localStorage.getItem("essay");
+        const storedMedium = localStorage.getItem("Meduim"); // typo? (Medium?)
+        const storedHard = localStorage.getItem("hard");
+
+        setEssay(storedEssay);
+        setMedium(storedMedium);
+        setHard(storedHard);
+    }, []);
     return (
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6 border-l-4 border-blue-500">
             <div className="flex items-center justify-between mb-4">
@@ -25,7 +36,7 @@ const ProgressReport = () => {
                 <div className="bg-yellow-50 p-4 rounded-lg">
                     <h4 className="font-semibold text-yellow-800 mb-2">Medium Topics</h4>
                     <div className="text-2xl font-bold text-yellow-600 mb-2">
-                        {meduim}%
+                        {medium}%
                     </div>
 
                 </div>

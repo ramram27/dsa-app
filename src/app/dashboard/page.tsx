@@ -1,7 +1,13 @@
 'use client'
+import { useEffect, useState } from "react";
 
 export default function DashboardPage() {
-    const email = localStorage.getItem('userEmail');
+    const [email, setEmail] = useState<string | null>(null);
+
+    useEffect(() => {
+        const storedEmail = localStorage.getItem("userEmail");
+        setEmail(storedEmail);
+    }, []);
 
     return (
         <div className="min-h-screen bg-gray-50 flex" style={{ marginTop: '-30rem' }}>
