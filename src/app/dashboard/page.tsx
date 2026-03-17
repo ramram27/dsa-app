@@ -8,7 +8,7 @@ export default function DashboardPage() {
         const storedEmail = localStorage.getItem("userEmail");
         setEmail(storedEmail);
     }, []);
-
+    console.log("hello")
     return (
         <div className="min-h-screen bg-gray-50 flex" style={{ marginTop: '-30rem' }}>
             <div className="flex-1 p-8">
